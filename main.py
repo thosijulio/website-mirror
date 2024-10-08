@@ -32,7 +32,7 @@ def download_file(url, target_path):
 
 with open(ROUTES_FILE, "r") as file:
     for line in file:
-        route = line.strip()
+        route = line.replace("GET ", "").split(" 404 ")[0].strip()
         
         full_url = f"{BASE_URL}{route}"
         
